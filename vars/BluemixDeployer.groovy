@@ -1,3 +1,4 @@
 def call(environment) {
-deploymentCommand = deploymentCommand + 'cf push -f ' + '$WORKSPACE/config/dev/manifest.yml '
+deploymentCommand = 'cf push -f ' + '$WORKSPACE/config/dev/manifest.yml '
+sh deploymentCommand
 }
