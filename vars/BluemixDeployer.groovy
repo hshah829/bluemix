@@ -1,5 +1,5 @@
 def call(environment) {
-sh 'cf create-service cloudantNoSQLDB standard cd1 -c '{"target":"bluemix-us-south","resource_group":"b91c13bd8e234950bbf3a8e779912037"}''    
+   
 sh 'cf cups slog_2_splunk -l syslog://172.00.74.78:9733'
 sh 'cf uups slog_2_splunk -l syslog://100.16.74.78:4444'
 deploymentCommand = 'cf push -f ' + '$WORKSPACE/config/dev/manifest.yml '
