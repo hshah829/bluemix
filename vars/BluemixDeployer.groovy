@@ -4,7 +4,6 @@ sh 'cf cups slog_2_splunk -l syslog://172.00.74.78:9733'
 sh 'cf uups slog_2_splunk -l syslog://100.16.74.78:4444'
 deploymentCommand = 'cf push -f ' + '$WORKSPACE/config/dev/manifest.yml '
 sh deploymentCommand
-sh 'cf bind-service h123test cd1'
 sh 'cf bind-service h123test slog_2_splunk'
 sh 'cf set-env h123test CONFIG_OAUTH_PROFILE uat'
 sh 'cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org/'
